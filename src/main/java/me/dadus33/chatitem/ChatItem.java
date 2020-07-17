@@ -15,7 +15,7 @@ import me.dadus33.chatitem.listeners.ChatPacketListener;
 import me.dadus33.chatitem.listeners.ChatPacketValidator;
 import me.dadus33.chatitem.utils.ProtocolSupportUtil;
 import me.dadus33.chatitem.utils.Storage;
-import org.bstats.Metrics;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.CommandSender;
@@ -130,7 +130,7 @@ public class ChatItem extends JavaPlugin {
         //Initialize Log4J filter (remove ugly console messages)
         filter = new Log4jFilter(storage);
 
-        new Metrics(this);
+        new Metrics(this, 948);
     }
 
 
@@ -141,45 +141,48 @@ public class ChatItem extends JavaPlugin {
 
     private boolean isMc18OrLater(){
         switch(getVersion(Bukkit.getServer())){
-            case "v1_7_R1": return false;
-            case "v1_7_R2": return false;
-            case "v1_7_R3": return false;
-            case "v1_7_R4": return false;
+            case "v1_7_R1":
+            case "v1_7_R2":
+            case "v1_7_R3":
+            case "v1_7_R4":
+                return false;
             default: return true;
         }
     }
 
     private boolean isMc111OrLater(){
         switch(getVersion(Bukkit.getServer())){
-            case "v1_7_R1": return false;
-            case "v1_7_R2": return false;
-            case "v1_7_R3": return false;
-            case "v1_7_R4": return false;
-            case "v1_8_R1": return false;
-            case "v1_8_R2": return false;
-            case "v1_8_R3": return false;
-            case "v1_9_R1": return false;
-            case "v1_9_R2": return false;
-            case "v1_10_R1": return false;
-            case "v1_10_R2": return false;
+            case "v1_7_R1":
+            case "v1_7_R2":
+            case "v1_7_R3":
+            case "v1_7_R4":
+            case "v1_8_R1":
+            case "v1_8_R2":
+            case "v1_8_R3":
+            case "v1_9_R1":
+            case "v1_9_R2":
+            case "v1_10_R1":
+            case "v1_10_R2":
+                return false;
             default: return true;
         }
     }
 
     private boolean isMc112Orlater(){
         switch(getVersion(Bukkit.getServer())){
-            case "v1_7_R1": return false;
-            case "v1_7_R2": return false;
-            case "v1_7_R3": return false;
-            case "v1_7_R4": return false;
-            case "v1_8_R1": return false;
-            case "v1_8_R2": return false;
-            case "v1_8_R3": return false;
-            case "v1_9_R1": return false;
-            case "v1_9_R2": return false;
-            case "v1_10_R1": return false;
-            case "v1_10_R2": return false;
-            case "v1_11_R1": return false;
+            case "v1_7_R1":
+            case "v1_7_R2":
+            case "v1_7_R3":
+            case "v1_7_R4":
+            case "v1_8_R1":
+            case "v1_8_R2":
+            case "v1_8_R3":
+            case "v1_9_R1":
+            case "v1_9_R2":
+            case "v1_10_R1":
+            case "v1_10_R2":
+            case "v1_11_R1":
+                return false;
             default: return true;
         }
     }
